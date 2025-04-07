@@ -40,11 +40,11 @@ export const Header = () => {
           onClick={(e) => e.stopPropagation()}
         >
           {navLinks.map((link) => (
-            <p key={link.href}>
+            <div key={link.href}>
               <Link href={link.href} className={styles.drawerLink}>
                 <Title level={5}>{link.label}</Title>
               </Link>
-            </p>
+            </div>
           ))}
         </div>
       </div>

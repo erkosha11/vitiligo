@@ -11,7 +11,7 @@
   display: flex;
   gap: 24px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     display: none;
   }
 }
@@ -19,7 +19,7 @@
 .burger {
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     display: inline-flex;
   }
 }
