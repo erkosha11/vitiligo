@@ -2,13 +2,13 @@ import 'app/style/App.scss'
 import { Achievements } from 'features/Achievements'
 import { Footer } from 'features/Footer'
 import { Header } from 'features/Header'
+import { Home } from 'features/Home'
 
 export const App = () => {
   return (
-    <div className='container'>
+    <div id='home' className='container'>
       <Header />
-      <div style={{ height: 10 }} />
-      <div style={{ height: 750 }} />
+      <Home />
       <Achievements />
       <Footer />
     </div>
