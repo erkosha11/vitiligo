@@ -6,7 +6,7 @@
   --color-bg-primary: #f7fafc;
   --color-bg-primary2: #242424;
 
-  background-color: var(--color-bg-primary2);
+  background-color: var(--color-bg-primary);
   font-family: 'Rubik', sans-serif !important;
   scroll-behavior: smooth;
 
@@ -14,6 +14,11 @@
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
+    gap: 20px;
+
+    .ant-card {
+      box-shadow: 0 0 !important;
+    }
   }
 
   h1,
@@ -33,7 +38,7 @@
   }
 
   span {
-    color: var(--color-secondary);
     font-family: 'Rubik', sans-serif !important;
+    font-weight: 100;
   }
 }
