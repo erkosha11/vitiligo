@@ -1,0 +1,12 @@
+{
+  "header": {
+    "clinic_name": "Vitiligo Clinic",
+    "doctor_name": "by Dr. A.A. Kasymkhanova"
+  },
+  "nav": {
+    "home": "Home",
+    "advantages": "Advantages",
+    "about": "About",
+    "results": "Results"
+  }
+}
