@@ -1,0 +1,48 @@
+@import url(../../../app/style/index.scss);
+
+.header {
+  position: fixed;
+  z-index: 100;
+  max-width: 1440px;
+  width: 100%;
+  border-radius: 0px 0px 18px 18px;
+}
+
+.headerContent {
+  padding: 16px;
+}
+
+.mobileMenu {
+  animation: fadeIn 0.3s ease;
+  border-radius: 0px 0px 18px 18px;
+  border: 1px solid #8c8c8c21;
+}
+
+.mobileSelect {
+  width: 126px;
+}
+
+.burgerButton {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .desktopMenu {
+    display: none;
+  }
+
+  .burgerButton {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
