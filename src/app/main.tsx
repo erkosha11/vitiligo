@@ -18,6 +18,9 @@ createRoot(document.getElementById('root')!).render(
           colorText: '#8c8c8c'
         },
         components: {
+          Typography: {
+            colorText: '#8c8c8c'
+          },
           Segmented: {
             itemSelectedBg: '#98768b',
             itemSelectedColor: '#fff',
@@ -25,6 +28,9 @@ createRoot(document.getElementById('root')!).render(
           },
           Select: {
             optionSelectedColor: '#ffffff'
+          },
+          Button: {
+            colorBgBase: '#fff'
           }
         }
       }}

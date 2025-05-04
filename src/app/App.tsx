@@ -1,11 +1,14 @@
+import { Flex } from 'antd'
 import 'app/style/App.scss'
 import { Header } from 'features/Header'
+import { Home } from 'features/Home'
 
 export const App = () => {
   return (
-    <div className='container'>
+    <Flex vertical className='container'>
       <Header />
+      <Home />
       <div style={{ height: 800 }}></div>
-    </div>
+    </Flex>
   )
 }
