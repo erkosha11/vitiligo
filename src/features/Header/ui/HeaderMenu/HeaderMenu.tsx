@@ -1,6 +1,6 @@
 import { Select, Flex, Segmented } from 'antd'
 import { Typography } from 'antd'
-import { getNavItems, languageOptions } from 'features/Header'
+import { getNavItems, headerStore, languageOptions } from 'features/Header'
 import { useTranslation } from 'react-i18next'
 import s from '../Header.module.scss'
 
@@ -15,9 +15,13 @@ export const HeaderMenu = ({ mobile = false, onItemClick }: Props) => {
 
   const navItems = getNavItems(t)
 
+  const handleClose = (val: string) => {
+    i18n.changeLanguage(val)
+    headerStore.closeMenu()
+  }
+
   return (
     <Flex
-      className={mobile ? s.mobileMenu : ''}
       align={mobile ? undefined : 'center'}
       gap={mobile ? 'middle' : 'large'}
       vertical={mobile}
@@ -47,7 +51,9 @@ export const HeaderMenu = ({ mobile = false, onItemClick }: Props) => {
       ) : (
         <Select
           value={i18n.language}
-          onChange={(val) => i18n.changeLanguage(val)}
+          onChange={(val) => {
+            handleClose(val)
+          }}
           options={languageOptions}
           size='small'
         />

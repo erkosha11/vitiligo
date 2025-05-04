@@ -5,15 +5,20 @@ import { MenuOutlined, CloseOutlined } from '@ant-design/icons'
 import { Card, Flex, Avatar, Typography, Button } from 'antd'
 import { HeaderMenu } from './HeaderMenu'
 import { observer } from 'mobx-react-lite'
-import { headerStore } from '../model/headerStore'
+import { headerStore } from 'features/Header'
 
 export const Header = observer(() => {
   const { t } = useTranslation()
   const { Title, Text } = Typography
 
   return (
-    <>
-      <Card variant='borderless' className={s.header} id='home'>
+    <Card
+      variant='borderless'
+      className={s.header}
+      id='home'
+      bodyStyle={{ padding: 0 }}
+    >
+      <div className={s.headerContent}>
         <Flex justify='space-between' align='center'>
           <Flex gap='small' align='center'>
             <Avatar size={64} src={Logo} />
@@ -35,11 +40,13 @@ export const Header = observer(() => {
             className={s.burgerButton}
           />
         </Flex>
-      </Card>
+      </div>
 
       {headerStore.isMenuOpen && (
-        <HeaderMenu mobile onItemClick={() => headerStore.closeMenu()} />
+        <Card className={s.mobileMenu}>
+          <HeaderMenu mobile onItemClick={() => headerStore.closeMenu()} />
+        </Card>
       )}
-    </>
+    </Card>
   )
 })
