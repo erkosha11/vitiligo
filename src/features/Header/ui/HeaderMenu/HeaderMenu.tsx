@@ -1,8 +1,9 @@
 import { Select, Flex, Segmented } from 'antd'
 import { Typography } from 'antd'
-import { getNavItems, headerStore, languageOptions } from 'features/Header'
+import { headerStore } from 'features/Header'
 import { useTranslation } from 'react-i18next'
 import s from '../Header.module.scss'
+import { languageOptions, getNavItems } from 'shared/lib'
 
 interface Props {
   mobile?: boolean

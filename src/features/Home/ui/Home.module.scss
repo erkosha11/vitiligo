@@ -1,11 +1,28 @@
+@import 'app/style/index.scss'; // включает mixins, layout, typography
+
 .home {
   border-radius: 18px;
   margin-top: 110px;
+  padding: 32px;
+
+  @include respond(md) {
+    padding: 24px;
+    margin-top: 90px;
+  }
+
+  @include respond(sm) {
+    padding: 16px;
+  }
 }
 
 .wrapper {
-  @media (max-width: 1003px) {
+  @include flex-between;
+  gap: 32px;
+  flex-wrap: wrap-reverse;
+
+  @include respond(lg) {
     justify-content: center;
+    gap: 24px;
   }
 }
 
@@ -13,34 +30,50 @@
   max-width: 600px;
   flex: 1;
   gap: 16px;
-}
+  display: flex;
+  flex-direction: column;
 
-.title {
-  font-size: 60px;
-  line-height: normal;
+  .title {
+    font-size: 60px;
+    line-height: 1.2;
+    color: var(--color-primary);
 
-  @media (max-width: 1200px) {
-    font-size: 40px;
+    @include respond(xl) {
+      font-size: 48px;
+    }
+
+    @include respond(md) {
+      font-size: 38px;
+    }
+
+    @include respond(sm) {
+      font-size: 30px;
+    }
   }
-  @media (max-width: 800px) {
-    font-size: 35px;
+
+  .description {
+    font-size: 20px;
+    color: var(--color-text-primary);
+
+    @include respond(xl) {
+      font-size: 18px;
+    }
+
+    @include respond(md) {
+      font-size: 16px;
+    }
   }
-}
-
-.description {
-  font-size: 20px;
-
-  @media (max-width: 1200px) {
-    font-size: 16px;
-  }
-}
-
-.imageWrapper {
-  overflow: hidden;
-  flex: 1;
 }
 
 .image {
-  height: auto;
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
   border-radius: 24px;
+  height: auto;
+  object-fit: cover;
+
+  @include respond(md) {
+    max-width: 100%;
+  }
 }

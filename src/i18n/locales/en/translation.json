@@ -13,5 +13,21 @@
     "advantages": "Advantages",
     "about": "About",
     "results": "Results"
+  },
+  "footer": {
+    "working_hours": "Working Hours",
+    "rights": "© 2025 Vitiligo Clinic. All rights reserved.",
+    "made_with_love": "Made with <icon/> to care for your skin",
+    "created_by": "Created by <1>dreamoferkosha</1>"
+  },
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed"
   }
 }
