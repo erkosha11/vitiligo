@@ -1,20 +1,65 @@
-@import url(../../../app/style/index.scss);
+@import 'app/style/index.scss'; // включает mixins, layout, typography
 
 .header {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  max-width: 1440px;
   width: 100%;
-  border-radius: 0px 0px 18px 18px;
+  max-width: 1440px;
+  border-radius: 0 0 18px 18px;
+  margin: 0 auto;
 }
 
 .headerContent {
   padding: 16px;
+  @include flex-between;
+
+  .logoBlock {
+    @include flex-between;
+    gap: 12px;
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+
+    .titleBlock {
+      @include flex-column;
+      gap: 4px;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 14px;
+        color: var(--color-text-secondary);
+      }
+    }
+  }
+
+  .burgerButton {
+    display: none;
+  }
+
+  @include respond(md) {
+    .desktopMenu {
+      display: none;
+    }
+
+    .burgerButton {
+      display: block;
+    }
+  }
 }
 
 .mobileMenu {
   animation: fadeIn 0.3s ease;
-  border-radius: 0px 0px 18px 18px;
+  border-radius: 0 0 18px 18px;
   border: 1px solid #8c8c8c21;
 }
 
@@ -22,17 +67,13 @@
   width: 126px;
 }
 
-.burgerButton {
-  display: none;
-}
+.navLink {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  transition: 0.2s;
 
-@media (max-width: 800px) {
-  .desktopMenu {
-    display: none;
-  }
-
-  .burgerButton {
-    display: block;
+  &:hover {
+    color: var(--color-primary);
   }
 }
 

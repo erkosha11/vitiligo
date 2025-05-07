@@ -8,24 +8,26 @@ export const Home = () => {
   const { Text } = Typography
 
   return (
-    <Card variant='borderless' className={s.home} id='home'>
-      <Flex
-        className={s.wrapper}
-        align='center'
-        justify='space-between'
-        gap={32}
-        wrap='wrap-reverse'
-      >
-        <Flex vertical className={s.text}>
-          <h1 className={s.title}>{t('home.title')}</h1>
-          <Text className={s.description}>{t('home.description')}</Text>
-          <Button type='primary' size='large'>
-            {t('home.button')}
-          </Button>
-        </Flex>
+    <>
+      <div id='home' />
+      <Card variant='borderless' className={s.home}>
+        <Flex
+          className={s.wrapper}
+          align='center'
+          justify='space-between'
+          wrap='wrap-reverse'
+        >
+          <Flex vertical className={s.text}>
+            <h1 className={s.text + ' ' + s.title}>{t('home.title')}</h1>
+            <Text className={s.description}>{t('home.description')}</Text>
+            <Button type='primary' size='large'>
+              {t('home.button')}
+            </Button>
+          </Flex>
 
-        <Image src={HomeIMG} preview={false} className={s.image} />
-      </Flex>
-    </Card>
+          <Image src={HomeIMG} preview={false} className={s.image} />
+        </Flex>
+      </Card>
+    </>
   )
 }
