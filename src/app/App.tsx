@@ -1,33 +1,69 @@
-import { useState } from 'react'
-import reactLogo from 'assets/react.svg'
-import viteLogo from '/vite.svg'
-import 'app/style/App.scss'
+import React from 'react'
 
-export const App = () => {
-  const [count, setCount] = useState(0)
-
+export const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href='https://vite.dev' target='_blank'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>
-        Click on the Vite and React logos to learn more
+    <main>
+      <h1 style={{ color: 'var(--color-primary)' }}>Vitiligo Platform</h1>
+      <p style={{ color: 'var(--color-secondary)' }}>
+        Это демо для переключения темы 🌗
       </p>
-    </>
+
+      <div
+        style={{
+          display: 'grid',
+          gap: '16px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          marginTop: '24px'
+        }}
+      >
+        <div style={cardStyle('var(--color-card)')}>
+          <h3 style={titleStyle}>Основной фон</h3>
+          <p style={descStyle}>--color-card</p>
+        </div>
+
+        <div style={cardStyle('var(--color-accent)')}>
+          <h3 style={titleStyle}>Акцент</h3>
+          <p style={descStyle}>--color-accent</p>
+        </div>
+
+        <div style={cardStyle('var(--color-muted)')}>
+          <h3 style={titleStyle}>Muted</h3>
+          <p style={descStyle}>--color-muted</p>
+        </div>
+
+        <div style={cardStyle('var(--color-border)')}>
+          <h3 style={titleStyle}>Border</h3>
+          <p style={descStyle}>--color-border</p>
+        </div>
+
+        <div style={cardStyle('var(--color-danger)')}>
+          <h3 style={titleStyle}>Danger</h3>
+          <p style={descStyle}>--color-danger</p>
+        </div>
+
+        <div style={cardStyle('var(--color-success)')}>
+          <h3 style={titleStyle}>Success</h3>
+          <p style={descStyle}>--color-success</p>
+        </div>
+      </div>
+    </main>
   )
+}
+
+const cardStyle = (bg: string): React.CSSProperties => ({
+  backgroundColor: bg,
+  borderRadius: 12,
+  padding: 20,
+  transition: 'all 0.3s ease'
+})
+
+const titleStyle: React.CSSProperties = {
+  color: 'var(--color-primary)',
+  fontSize: 18,
+  marginBottom: 8
+}
+
+const descStyle: React.CSSProperties = {
+  color: 'var(--text-color)',
+  fontSize: 14
 }
