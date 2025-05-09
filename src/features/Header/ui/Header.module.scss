@@ -1,0 +1,50 @@
+.header {
+  padding: 24px;
+  z-index: 1;
+
+  .navbar {
+    display: flex;
+  }
+
+  .buttonMenu {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--color-card) !important;
+    .navbar {
+      display: none;
+    }
+    .buttonMenu {
+      display: flex;
+    }
+  }
+}
+.mobileMenu {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--color-card);
+  border-radius: 0 0 18px 18px;
+  z-index: 100;
+  padding: 16px;
+
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .button {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

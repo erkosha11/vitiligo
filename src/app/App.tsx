@@ -1,19 +1,19 @@
+import { Card } from 'antd'
+import { Header } from 'features/Header'
 import React from 'react'
 
 export const App: React.FC = () => {
   return (
-    <main>
-      <h1 style={{ color: 'var(--color-primary)' }}>Vitiligo Platform</h1>
-      <p style={{ color: 'var(--color-secondary)' }}>
-        Это демо для переключения темы 🌗
-      </p>
+    <main className='container'>
+      <Header />
 
-      <div
+      <Card
+        variant='borderless'
         style={{
           display: 'grid',
           gap: '16px',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          marginTop: '24px'
+          background: '#000'
         }}
       >
         <div style={cardStyle('var(--color-card)')}>
@@ -45,7 +45,7 @@ export const App: React.FC = () => {
           <h3 style={titleStyle}>Success</h3>
           <p style={descStyle}>--color-success</p>
         </div>
-      </div>
+      </Card>
     </main>
   )
 }
