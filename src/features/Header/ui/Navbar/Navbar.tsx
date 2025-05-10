@@ -3,9 +3,10 @@ import s from '../Header.module.scss'
 
 interface Props {
   onItemClick?: () => void
+  className?: string
 }
 
-export const Navbar = ({ onItemClick }: Props) => {
+export const Navbar = ({ onItemClick, className }: Props) => {
   const navItems = [
     { label: 'О нас', href: '#about' },
     { label: 'Результаты лечения', href: '#methods' },
@@ -14,7 +15,7 @@ export const Navbar = ({ onItemClick }: Props) => {
   ]
 
   return (
-    <Flex gap='small' wrap className={s.nav}>
+    <Flex gap='small' wrap className={className}>
       {navItems.map((item) => (
         <Button
           key={item.href}

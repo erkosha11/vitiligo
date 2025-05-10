@@ -1,10 +1,11 @@
-import { Card } from 'antd'
+import { Card, Flex } from 'antd'
+import { Footer } from 'features/Footer'
 import { Header } from 'features/Header'
 import React from 'react'
 
 export const App: React.FC = () => {
   return (
-    <main className='container'>
+    <Flex vertical gap='middle' className='container'>
       <Header />
 
       <Card
@@ -12,8 +13,7 @@ export const App: React.FC = () => {
         style={{
           display: 'grid',
           gap: '16px',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          background: '#000'
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))'
         }}
       >
         <div style={cardStyle('var(--color-card)')}>
@@ -46,7 +46,8 @@ export const App: React.FC = () => {
           <p style={descStyle}>--color-success</p>
         </div>
       </Card>
-    </main>
+      <Footer />
+    </Flex>
   )
 }
 
